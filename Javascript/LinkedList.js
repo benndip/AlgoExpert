@@ -14,12 +14,20 @@ a.next = b
 b.next = c
 c.next = d
 
+// Iterative method
+// const printLinkedList = (head) => {
+//     let current = head
+//     while(current != null){ //wrong to use current.next here
+//         console.log(current.data);
+//         current = current.next;
+//     }
+// }
+
+// Recuresive method
 const printLinkedList = (head) => {
-    let current = head
-    while(current != null){ //wrong to use current.next here
-        console.log(current.data);
-        current = current.next;
-    }
+    if(head == null ) return
+    console.log(head.data);
+    printLinkedList(head.next)
 }
 
 printLinkedList(a)
