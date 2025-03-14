@@ -39,7 +39,25 @@ class LinkedList:
                 return "Found "
             current = current.next_node
 
-        return "Not Found" 
+        return "Not Found"
+
+    def insert(self, data, index):
+        count = 0
+        
+        if index==0:
+            self.add(data)
+        if index > 0:
+            current = self.head
+            new_node = Node(data)
+            while current:
+                if count < index:
+                    count += 1
+                    current = current.next_node
+                elif count == index:
+                    new_node.next_node = current.next_node
+                    current.next_node = new_node
+                    return "Inserted at %s" % count
+
 
     def __repr__(self):
         nodes = []
